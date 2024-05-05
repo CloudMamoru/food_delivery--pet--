@@ -27,6 +27,14 @@
   color: var(--text-color);
 }
 
+.activeLink {
+  color: var(--primary-color);
+}
+
+.link:hover {
+  color: var(--primary-color);
+}
+
 .avatar {
   margin-bottom: 20px;
 }

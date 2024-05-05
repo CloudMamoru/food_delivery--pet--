@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import { Button } from '../../components/Button/Button';
+import cn from 'classnames';
 
 export const Sidebar = () => {
 	return (
@@ -17,14 +18,18 @@ export const Sidebar = () => {
 			</div>
       
 			<div className={styles.menu}>
-				<Link to='/' className={styles.link}>
+				<NavLink to='/' className={({isActive}) => cn(styles.link, {
+					[styles.activeLink]: isActive
+				})}>
 					<img src="/menu-icon.svg" alt="menu" />
           Menu
-				</Link>
-				<Link to='/cart' className={styles.link}>
+				</NavLink>
+				<NavLink to='/cart' className={({isActive}) => cn(styles.link, {
+					[styles.activeLink]: isActive
+				})}>
 					<img src="cart-icon.svg" alt="cart" />
-          Cart
-				</Link>
+          Cart 
+				</NavLink>
 			</div>
       
 			<Button appearance='small' className={styles.exit}>
