@@ -5,7 +5,7 @@ import styles from './Layout.module.css';
 export const Layout = () => {
 	return <div className={styles.layout}>
 		<Sidebar />
-		<div>
+		<div className={styles.content}>
 			<Outlet />
 		</div>
 	</div>;
