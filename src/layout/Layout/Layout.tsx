@@ -1,13 +1,12 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { Sidebar } from '../Sidebar/Sidebar';
+import styles from './Layout.module.css';
 
 export const Layout = () => {
-	return <>
-		<div>
-			<Link to=''>Menu</Link>
-			<Link to='/cart'>Cart</Link>
-		</div>
+	return <div className={styles.layout}>
+		<Sidebar />
 		<div>
 			<Outlet />
 		</div>
-	</>;
-};
+	</div>;
+};  

@@ -1,0 +1,51 @@
+.sidebar {
+  display: flex;
+  padding: 30px;
+  border-right: 1px solid var(--separator-color);
+  flex-direction: column;
+}
+
+.exit {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.avatar {
+  margin-bottom: 20px;
+}
+
+.user {
+  margin-bottom: 46px;
+}
+
+.name {
+  color: var(--text-color);
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.email {
+  color: #9EA1B1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+}
