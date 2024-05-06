@@ -5,15 +5,18 @@ import { createBrowserRouter, defer, RouterProvider } from 'react-router-dom';
 import { Menu } from './pages/Menu/Menu.tsx';
 import { Cart } from './pages/Cart/Cart.tsx';
 import { Error } from './pages/Error/Error.tsx'; 
-import { Layout } from './layout/Layout/Layout.tsx';
+import { MenuLayout } from './layout/Menu/MenuLayout.tsx';
 import { Product } from './pages/Product/Product.tsx';
 import axios from 'axios';
 import { PREFIX } from './helpers/api.ts';
+import { AuthLayout } from './layout/Auth/AuthLayout.tsx';
+import { Login } from './pages/Login/Login.tsx';
+import { Register } from './pages/Register/Register.tsx';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Layout />,
+		element: <MenuLayout />,
 		children: [
 			{
 				path: '/',
@@ -32,6 +35,20 @@ const router = createBrowserRouter([
 						data: axios.get(`${PREFIX}/products/${params.id}`).then(data => data)
 					});
 				}
+			}
+		] 
+	},
+	{
+		path: '/auth',
+		element: <AuthLayout />,
+		children: [
+			{
+				path: 'login',
+				element: <Login />
+			}, 
+			{
+				path: 'register', 
+				element: <Register />
 			}
 		]
 	},
