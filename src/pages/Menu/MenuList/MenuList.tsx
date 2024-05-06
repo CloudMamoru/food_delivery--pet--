@@ -7,6 +7,7 @@ export const MenuList: FC<MenuProps> = ({products}) => {
 	return <div className={styles.wrapper}> 
 		{products.map(product => (
 			<ProductCard
+				key={product.id}
 				id={product.id}
 				name={product.name}
 				description={product.ingredients.join(', ')}

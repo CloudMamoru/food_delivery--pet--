@@ -1,3 +1,3 @@
-export interface loginResponse {
+export interface LoginResponse {
   access_token: string
 }
