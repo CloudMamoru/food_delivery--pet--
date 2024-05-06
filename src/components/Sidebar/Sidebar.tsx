@@ -2,18 +2,26 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './Sidebar.module.css';
 import { Button } from '../../components/Button/Button';
 import cn from 'classnames';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../store/store';
-import { userActions } from '../../store/user.slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../store/store';
+import { getProfile, userActions } from '../../store/user.slice';
+import { useEffect } from 'react';
 
 export const Sidebar = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
+	const profile = useSelector((s: RootState) => s.user.profile);
+
+	useEffect(() => {
+		dispatch(getProfile());
+	}, [dispatch]);
 
 	const logout = () => {
 		dispatch(userActions.logoutUser());
 		navigate('/auth/login');
 	};
+
+
 
 	return (
 		<div className={styles.sidebar}>
@@ -21,10 +29,10 @@ export const Sidebar = () => {
 			<div className={styles.user}>
 				<img src="/avatar.svg" alt="user_avatar" className={styles.avatar} />
 				<div className={styles.name}>
-          Mamoru Tschernakow
+					{profile?.name}
 				</div>
 				<div className={styles.email}>
-          mamoru@mamoru.ru
+					{profile?.email}
 				</div>
 			</div>
       

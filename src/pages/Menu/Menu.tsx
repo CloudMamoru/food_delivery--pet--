@@ -36,8 +36,8 @@ export const Menu = () => {
 	return (
 		<>
 			<div className={styles.head}>
-				<Headling>Menu</Headling>
-				<Search placeholder='Enter a dish or ingredients' />
+				<Headling>Меню</Headling>
+				<Search placeholder='Введите блюдо или состав' />
 			</div>
 			<div className={styles.cards}>
 				{!isLoading && <MenuList products={products} />}

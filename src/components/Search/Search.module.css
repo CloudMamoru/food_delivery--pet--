@@ -10,10 +10,10 @@
   padding: 16px 30px 16px 44px;
 
 
-  min-width: 240px;
+  min-width: 250px;
   box-sizing: border-box;
 }
-
+ 
 .inputWrapper {
   position: relative;
 }
