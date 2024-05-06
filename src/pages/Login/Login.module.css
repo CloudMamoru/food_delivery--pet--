@@ -40,3 +40,10 @@
   text-decoration: none;
   color: var(--primary-color);
  }
+
+ .error {
+  background: #FFC529;
+  color: var(--main-color);
+  padding: 10px;
+  border-radius: 5px;
+ }
