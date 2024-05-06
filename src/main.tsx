@@ -12,11 +12,12 @@ import { PREFIX } from './helpers/api.ts';
 import { AuthLayout } from './layout/Auth/AuthLayout.tsx';
 import { Login } from './pages/Login/Login.tsx';
 import { Register } from './pages/Register/Register.tsx';
+import { RequireAuth } from './helpers/RequireAuth.tsx';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <MenuLayout />,
+		element: <RequireAuth><MenuLayout /></RequireAuth>,
 		children: [
 			{
 				path: '/',
