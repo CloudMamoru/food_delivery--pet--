@@ -20,8 +20,12 @@ export type LoginForm = {
 export const Login = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
-	const { jwt, loginErrorMessage} = useSelector((s: RootState) => s.user);
+	const { jwt, errorMessage} = useSelector((s: RootState) => s.user);
 
+
+	useEffect(() => {
+		dispatch(userActions.clearError());
+	}, [dispatch]);
 
 	useEffect(() => {
 		if (jwt) {
@@ -35,7 +39,7 @@ export const Login = () => {
 
 	const submit = (e: FormEvent) => {
 		e.preventDefault();
-		dispatch(userActions.clearLoginError());
+		dispatch(userActions.clearError());
 		const target = e.target as typeof e.target & LoginForm;
 		const { email, password } = target;
 		sendLogin(email.value, password.value);
@@ -57,7 +61,7 @@ export const Login = () => {
 					</label>
 					<Input id="password" name='password' placeholder='Пароль' type='password ' />
 				</div>
-				{loginErrorMessage && <div className={styles.error}>{loginErrorMessage}</div>}
+				{errorMessage && <div className={styles.error}>{errorMessage}</div>}
 				<Button appearance="big">Вход</Button>
 			</form>
 			<div className={styles.link}>
