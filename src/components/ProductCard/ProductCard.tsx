@@ -1,6 +1,5 @@
 import { FC, MouseEvent } from 'react';
 import styles from './ProductCard.module.css';
-// import cn from 'classnames';
 import { ProductCardProps } from './ProductCard.props';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
