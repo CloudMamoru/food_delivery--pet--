@@ -1,10 +1,19 @@
-import { FC } from 'react';
+import { FC, MouseEvent } from 'react';
 import styles from './ProductCard.module.css';
 // import cn from 'classnames';
 import { ProductCardProps } from './ProductCard.props';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../store/store';
+import { cartActions } from '../../store/cart.slice';
 
 export const ProductCard: FC<ProductCardProps> = (props) => {
+	const dispatch = useDispatch<AppDispatch>();
+
+	const add = (e: MouseEvent) => {
+		e.preventDefault();
+		dispatch(cartActions.add(props.id));
+	};
  
 	return (
 		<Link to={`/product/${props.id}`} className={styles.link}>
@@ -14,9 +23,9 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
 						{props.price}&nbsp; 
 						<span className={styles.currency}>₽</span>  
 					</div>
-					<button className={styles.addToCart}>
+					<button className={styles.addToCart} onClick={add}>
 						<img src="/cart-button-icon.svg" alt="add to cart" />
-					</button>
+					</button> 
 					<div className={styles.rating}>
 						{props.rating}&nbsp; 
 						<img src="/rating-icon.svg" alt="rating" />
