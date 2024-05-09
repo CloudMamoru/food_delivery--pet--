@@ -22,8 +22,6 @@ export const Sidebar = () => {
 		navigate('/auth/login');
 	};
 
-
-
 	return (
 		<div className={styles.sidebar}>
        
