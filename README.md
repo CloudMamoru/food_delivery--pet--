@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# DeliveryApp - Online Delivery Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**DeliveryApp** is a modern web application for managing online food delivery orders. It offers a seamless user experience with secure authentication, real-time order updates, and efficient state management.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📝 About the Project
 
-## Expanding the ESLint configuration
+DeliveryApp was built with a focus on scalability, maintainability, and responsiveness using modern front-end technologies.  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Key features of the project include:  
+- **React** – For building a dynamic and interactive user interface.  
+- **TypeScript** – To ensure type safety and reduce runtime errors.  
+- **Redux Toolkit** – For efficient and scalable state management.  
+- **Rollup** – For optimizing the build process and minimizing bundle size.  
+- **API Integration** – To fetch and manage data from the server, including products, orders, and user authentication.  
+- **localStorage** – To store authentication tokens for persistent user sessions.  
 
-- Configure the top-level `parserOptions` property like this:
+This project is an example of a professional-grade React application designed for real-world use cases.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+---
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## ✨ Features
+
+1. **User Authentication**  
+   - Secure login and registration using auth tokens stored in `localStorage`.  
+   - Persistent sessions for a smooth user experience.
+![Auth](/images/Auth.png)  
+
+2. **Browse and Search Products**  
+   - View a catalog of available items with categories and search functionality.
+![Main](/images/Main.png)
+
+3. **Add to Cart and Checkout**  
+   - Add items to the cart, update quantities, and complete the checkout process.
+![Cart](/images/Cart.png)
+
+---
+
+## 🛠️ Technologies Used
+
+- **React** – For building the user interface.  
+- **TypeScript** – For type-safe development.  
+- **Redux Toolkit** – For managing the app's global state.  
+- **Rollup** – For bundling and optimizing the application.  
+- **localStorage** – For storing auth tokens and user data.  
+- **REST API** – For interacting with backend services.  
+
+---
+
+## 🚀 Getting Started
+
+You can register yourself or use my data: (mamoru@mail.ru, 123)<br>
+Link: https://cloudmamoru.github.io/food_delivery--pet--/
